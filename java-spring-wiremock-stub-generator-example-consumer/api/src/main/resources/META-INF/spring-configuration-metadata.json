@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "consumer.url",
+      "type": "java.lang.String"
+    }
+  ]
+}

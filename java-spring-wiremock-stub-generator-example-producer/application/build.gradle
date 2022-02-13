@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'io.lsdconsulting.gradle.wiremock-stub-jar' version 'f2e9b3f.dirty'
+}
+
+apply plugin: 'org.springframework.boot'
+
+apply from: 'dependencies.gradle'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifact stubsJar
+            artifactId "${rootProject.name}-${project.name}"
+        }
+    }
+}
