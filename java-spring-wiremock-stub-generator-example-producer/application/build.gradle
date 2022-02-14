@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'io.lsdconsulting.gradle.wiremock-stub-jar' version 'f2e9b3f.dirty'
+    id 'io.github.lsd-consulting.gradle.wiremock-stub-jar' version '1.0.0'
 }
 
 apply plugin: 'org.springframework.boot'
