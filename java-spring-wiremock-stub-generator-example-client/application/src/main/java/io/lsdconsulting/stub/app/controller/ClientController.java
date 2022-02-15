@@ -1,8 +1,8 @@
 package io.lsdconsulting.stub.app.controller;
 
-import io.lsdconsulting.stub.api.response.ProducerResponse;
 import io.lsdconsulting.stub.api.response.Response;
-import io.lsdconsulting.stub.client.ProducerClient;
+import io.lsdconsulting.stub.api.response.ServerResponse;
+import io.lsdconsulting.stub.client.ServerClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(path = "/resource")
 @RequiredArgsConstructor
-public class ConsumerController {
+public class ClientController {
 
-    private final ProducerClient producerClient;
+    private final ServerClient serverClient;
 
     @GetMapping("/{id}")
     public Response getData(@PathVariable final String id) {
-        ProducerResponse producerResponse = producerClient.getProducerData();
+        ServerResponse serverResponse = serverClient.getServerData();
         return Response.builder()
-                .id(producerResponse.getId())
-                .name(producerResponse.getAuthor().getName())
+                .id(serverResponse.getId())
+                .name(serverResponse.getAuthor().getName())
                 .build();
     }
 

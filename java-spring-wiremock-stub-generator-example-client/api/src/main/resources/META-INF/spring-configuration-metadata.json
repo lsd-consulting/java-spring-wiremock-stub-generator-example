@@ -1,7 +1,7 @@
 {
   "properties": [
     {
-      "name": "consumer.url",
+      "name": "client.url",
       "type": "java.lang.String"
     }
   ]

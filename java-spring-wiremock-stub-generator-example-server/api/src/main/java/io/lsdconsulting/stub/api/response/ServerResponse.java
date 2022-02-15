@@ -7,7 +7,7 @@ import java.time.ZonedDateTime;
 
 @Builder
 @Value
-public class ProducerResponse {
+public class ServerResponse {
     String id;
     String message;
     Author author;

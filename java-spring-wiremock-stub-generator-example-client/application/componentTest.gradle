@@ -14,8 +14,8 @@ configurations {
 
 dependencies {
 
-    // Producer stubs
-    componentTestImplementation 'io.github.lsd-consulting:java-spring-wiremock-stub-generator-example-producer-application:SNAPSHOT:wiremock-stubs'
+    // Server stubs
+    componentTestImplementation 'io.github.lsd-consulting:java-spring-wiremock-stub-generator-example-server-application:SNAPSHOT:wiremock-stubs'
 
     // Spring
     componentTestImplementation 'org.springframework.boot:spring-boot-starter-test'

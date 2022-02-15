@@ -6,11 +6,11 @@ import feign.FeignException;
 import io.cucumber.java8.En;
 import io.cucumber.spring.CucumberContextConfiguration;
 import io.lsdconsulting.stub.api.response.Author;
-import io.lsdconsulting.stub.api.response.ProducerResponse;
 import io.lsdconsulting.stub.api.response.Response;
-import io.lsdconsulting.stub.app.ConsumerApplication;
-import io.lsdconsulting.stub.app.controller.ProducerControllerStub;
-import io.lsdconsulting.stub.client.ConsumerClient;
+import io.lsdconsulting.stub.api.response.ServerResponse;
+import io.lsdconsulting.stub.app.ClientApplication;
+import io.lsdconsulting.stub.app.controller.ServerControllerStub;
+import io.lsdconsulting.stub.client.Client;
 import io.lsdconsulting.stub.component.config.WiremockConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -26,21 +26,21 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.DEFINED_PORT;
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
-@SpringBootTest(webEnvironment = DEFINED_PORT, classes = {ConsumerApplication.class})
+@SpringBootTest(webEnvironment = DEFINED_PORT, classes = {ClientApplication.class})
 @CucumberContextConfiguration
 @ActiveProfiles("test")
 @Import({WiremockConfiguration.class})
-@EnableFeignClients(clients = ConsumerClient.class)
-public class ConsumerSteps implements En {
+@EnableFeignClients(clients = Client.class)
+public class ClientSteps implements En {
     private final String name = randomAlphabetic(10);
     private final Integer age = nextInt(0, 125);
 
-    private final ProducerControllerStub producerControllerStub = new ProducerControllerStub(new ObjectMapper());
+    private final ServerControllerStub serverControllerStub = new ServerControllerStub(new ObjectMapper());
 
     private Response response;
     private HttpStatus httpStatus;
 
-    public ConsumerSteps(ConsumerClient consumerClient, WireMockServer wireMockServer) {
+    public ClientSteps(Client client, WireMockServer wireMockServer) {
         Before(() -> {
             wireMockServer.start();
             configureFor("localhost", wireMockServer.port());
@@ -48,18 +48,18 @@ public class ConsumerSteps implements En {
         });
         After(wireMockServer::stop);
 
-        Given("^the consumer is ready to accept requests$", () ->
-                producerControllerStub.getGetData(ProducerResponse.builder().id("id").author(Author.builder().name("author").build()).build()));
+        Given("^the client is ready to accept requests$", () ->
+                serverControllerStub.getGetData(ServerResponse.builder().id("id").author(Author.builder().name("author").build()).build()));
 
-        When("^a request is sent to the consumer$", () -> {
+        When("^a request is sent to the client$", () -> {
             try {
-                response = consumerClient.getData("someId");
+                response = client.getData("someId");
             } catch (final FeignException e) {
                 httpStatus = HttpStatus.valueOf(e.status());
             }
         });
 
-        Then("^the data from the producer's stub is returned$", () -> {
+        Then("^the data from the server's stub is returned$", () -> {
             Response expectedResponse = Response.builder()
                     .id("id")
                     .name("author")
