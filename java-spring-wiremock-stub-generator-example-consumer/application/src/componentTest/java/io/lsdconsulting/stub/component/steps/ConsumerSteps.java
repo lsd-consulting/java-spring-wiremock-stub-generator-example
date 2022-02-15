@@ -68,7 +68,7 @@ public class ConsumerSteps implements En {
             assertThat(response, equalTo(expectedResponse));
         });
 
-        Then("^the HTTP status code NOT_FOUND is returned$", () -> assertThat(httpStatus, equalTo(INTERNAL_SERVER_ERROR)));
+        Then("^the HTTP status code INTERNAL_SERVER_ERROR is returned$", () -> assertThat(httpStatus, equalTo(INTERNAL_SERVER_ERROR)));
 
     }
 }
