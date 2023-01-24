@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="java-spring-wiremock-stub-generator-example-server-api" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="kotlin-spring-wiremock-stub-generator-example-server.api.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/io/github/lsd-consulting/spring-wiremock-stub-generator/SNAP99/spring-wiremock-stub-generator-SNAP99.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.7.10/165e600dfea6185cf5efa700756294cc4904dbeb/kotlin-reflect-1.7.10.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.7.10/kotlin-stdlib-jdk8-1.7.10.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.7.10/kotlin-stdlib-jdk7-1.7.10.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.10/kotlin-stdlib-common-1.7.10.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/pebbletemplates/pebble/3.1.5/pebble-3.1.5.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/apache/commons/commons-text/1.9/commons-text-1.9.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.12/spring-web-5.3.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/spring-context/5.3.12/spring-context-5.3.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/jetbrains/annotations/13.0/annotations-13.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.3.12/spring-aop-5.3.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.12/spring-beans-5.3.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/spring-expression/5.3.12/spring-expression-5.3.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/spring-core/5.3.12/spring-core-5.3.12.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/springframework/spring-jcl/5.3.12/spring-jcl-5.3.12.jar" />
+        </processorPath>
+        <module name="kotlin-spring-wiremock-stub-generator-example-server.application.main" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
